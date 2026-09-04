@@ -85,11 +85,11 @@ ul {
 }
 
 main {
+    position: relative;
     padding-top: 70px;
 }
 
 .FV {
-    position: relative;
     width: 100%;
     height: 680px;
     max-width: 1440px;
@@ -99,7 +99,7 @@ main {
 }
 
 .FV-background {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -137,14 +137,6 @@ main {
     object-fit: cover;
 }
 
-.circle {
-    position: absolute;
-    top: 140px;
-    right: 42%;
-    z-index: 2;
-    width: 200px;
-}
-
 .FV-text {
     position: relative;
     z-index: 3;
@@ -155,29 +147,35 @@ main {
     top: 60px
 }
 
+.circle {
+    position: absolute;
+    top: 40px;
+    left: 450px;
+}
+
 .title {
+    position: absolute;
+    top: 160px;
     font-size: 42px;
-    line-height: 1.5;
     font-weight: bold;
     color: #333333;
     margin-bottom: 15px;
 }
 
 .button-area {
-    margin-bottom: 20px;
+    position: absolute;
+    top:360px;
 }
 
 .FV-button {
     display: inline-block;
     border-radius: 999px;
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     background-color: #F79214;
     color: #ffffff;
-    padding: 18px 45px;
+    padding: 18px 130px;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(247, 146, 20, 0.3);
     transition: opacity 0.2s ease;
 }
 
@@ -186,15 +184,25 @@ main {
 }
 
 .sub-title {
+    position: absolute;
     font-size: 11px;
     color: #666;
     line-height: 1.6;
 }
 
+.phone {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {   
+    .phone {
+        display: block;
+        margin-bottom: 7px;
+        width: 100%;
+    }
+
     .upper-left {
-        position: absolute;
-        top: -100px;
+        display: none;
     }
 
     .lower-right {
@@ -203,8 +211,8 @@ main {
 
     .circle {
         width: 100px;
-        top: 390px;
-        left: 260px;
+        top: 650px;
+        left: 280px;
     }
 
     .container {
@@ -226,48 +234,44 @@ main {
     }
 
     .oval {
-        position: absolute;
-        width: 400px;
-        top: -30px;
-        left: 50px;
+        display: none;
     }
 
     .main-man {
-        position: relative;
-        width: 590px;
-        height: 100%;
-        object-fit: contain;
-        right: -190px;
-        top: -340px;
+        display: none;
     }
 
     .FV-text {
+        position: relative;
         text-align: left;
         padding: 0 24px;
-        top: -610px;
+        top: -700px;
     }
 
     .title {
-        font-size: 24px;
-        line-height: 1.4;
+        font-size: 25px;
         margin-bottom: 24px;
+        top: 680px;
     }
 
     .button-area {
+        position: absolute;
+        top: 800px;
         width: 100%;
         padding: 0;
     }
 
     .FV-button {
         display: block;
-        width: 65%;
+        width: 80%;
         font-size: 16px;
-        padding: 16px 0;
+        padding: 18px;
     }
 
     .sub-title {
-        font-size: 10px;
+        position: absolute;
+        font-size: 12px;
         text-align: left;
-        margin-top: 15px;
+        line-height: 1.6;
     }
 }
