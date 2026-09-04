@@ -104,7 +104,6 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
 }
 
 .upper-left {
@@ -194,25 +193,60 @@ main {
     display: none;
 }
 
-@media screen and (max-width: 767px) {   
-    .phone {
-        display: block;
-        margin-bottom: 7px;
-        width: 100%;
-    }
+.menu-checkbox, .menu-btn {
+    display: none;
+}
 
-    .upper-left {
+@media screen and (max-width: 767px) {   
+    .header-menu {
         display: none;
     }
 
-    .lower-right {
+    .menu-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 40px;
+    }
+
+    .menu-btn span,
+    .menu-btn span::before,
+    .menu-btn span::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 25px;
+        background-color: #888888;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .menu-btn span::before {
+        top: -8px;
+    }
+
+    .menu-btn span::after {
+        top: 8px;
+    }
+
+    .phone {
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .upper-left, .lower-right, .oval, .main-man {
         display: none;
     }
 
     .circle {
+        position: absolute;
         width: 100px;
-        top: 650px;
-        left: 280px;
+        top: 460px;
+        left: 260px;
     }
 
     .container {
@@ -221,8 +255,7 @@ main {
     
     .FV {
         height: auto;
-        padding: 40px 0;
-        flex-direction: column;
+        padding: 20px 0;
         display: block;
     }
 
@@ -233,45 +266,42 @@ main {
         margin-bottom: 20px;
     }
 
-    .oval {
-        display: none;
-    }
-
-    .main-man {
-        display: none;
-    }
-
     .FV-text {
         position: relative;
-        text-align: left;
-        padding: 0 24px;
-        top: -700px;
+        text-align: center;
+        padding: 0 20px;
+        top: 0;
     }
 
     .title {
-        font-size: 25px;
-        margin-bottom: 24px;
-        top: 680px;
+        position: static;
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        text-align: left;
     }
 
     .button-area {
-        position: absolute;
-        top: 800px;
-        width: 100%;
-        padding: 0;
+        position: static;
+        margin-top: 25px;
     }
 
     .FV-button {
+        position: absolute;
         display: block;
-        width: 80%;
-        font-size: 16px;
-        padding: 18px;
+        width: 90%;
+        max-width: 400px;
+        font-size: 15px;
+        padding: 15px 0;
+        margin: 0 auto 15px;
     }
 
     .sub-title {
         position: absolute;
-        font-size: 12px;
+        font-size: 10px;
         text-align: left;
-        line-height: 1.6;
+        line-height: 1.5;
+        margin: 60px auto 15px;
     }
 }
+
